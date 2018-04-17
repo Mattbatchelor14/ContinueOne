@@ -1,0 +1,51 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+input, button{
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+
+}
+
+.main-div, .loggedin-div{
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 150px;
+    padding: 20px;
+   display: none;
+}
+
+.main-div input, .loggedin-div input{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.main-div button , .loggedin-div button{
+    background: #5dBffc;
+    color: #fff;
+    border: 1px solid #5dBffc;
+    border-radius: 5px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+
+}
+
+.main-div button:hover , .loggedin-div button:hover{
+    background: #fff;
+    color: #5dbffc;
+    border: 1px solid #5dBffc;
+
+}
