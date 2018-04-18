@@ -1,3 +1,16 @@
+var config = {
+  apiKey: "AIzaSyDv-r3_401EM-dGNxEzoKfh-1fC-iwhO5k",
+  authDomain: "continueone-dev.firebaseapp.com",
+  databaseURL: "https://continueone-dev.firebaseio.com",
+  projectId: "continueone-dev",
+  storageBucket: "continueone-dev.appspot.com",
+  messagingSenderId: "620072806800"
+};
+firebase.initializeApp(config);
+
+
+//Check if user is logged in
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -9,6 +22,23 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.getElementById("login_div").style.display = "block";
     }
   });
+
+// Get Company Information
+database = firebase.database();
+var CompanyName = database.ref('CompanyName');
+
+    CompanyName.once('value', gotData);
+
+function gotData(data){
+console.log('Data');
+console.log(data);
+
+}
+
+
+    
+  
+  // }
 
 function login(){
 
@@ -40,20 +70,3 @@ function logout(){
       });
 }
 
-function GetCompanyInformation(){
-
-  var CompanyName = document.getElementById("CompanyName");
-  var CompanyAddress = document.getElementById("CompanyAddress");
-  var CompanyMainPhone = document.getElementById("CompanyMainPhone");
-  var CompanyMainContact = document.getElementById("CompanyMainContact");
-  var CompanySupportPin = document.getElementById("CompanySupportPin");
-
-
-  var CompanyNameGet = firebase.database().ref().child()("CompanyName");
-
-  CompanyNameGet.on('value', function(datasnapshot){
-    CompanyName.innerText = datasnapshot.val();
-  })
-  
-
-}
