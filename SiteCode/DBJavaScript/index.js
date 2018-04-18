@@ -39,3 +39,21 @@ function logout(){
         window.alert("Error: " + errorMessage)
       });
 }
+
+function GetCompanyInformation(){
+
+  var CompanyName = document.getElementById("CompanyName");
+  var CompanyAddress = document.getElementById("CompanyAddress");
+  var CompanyMainPhone = document.getElementById("CompanyMainPhone");
+  var CompanyMainContact = document.getElementById("CompanyMainContact");
+  var CompanySupportPin = document.getElementById("CompanySupportPin");
+
+
+  var CompanyNameGet = firebase.database().ref().child()("CompanyName");
+
+  CompanyNameGet.on('value', function(datasnapshot){
+    CompanyName.innerText = datasnapshot.val();
+  })
+  
+
+}
